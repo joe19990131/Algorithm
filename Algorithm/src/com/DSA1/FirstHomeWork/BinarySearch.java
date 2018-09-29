@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class BinarySearch {
 	int data[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 ,10};
 
+	//此序列必須經過排列才可正確執行
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BinarySearch bs = new BinarySearch();

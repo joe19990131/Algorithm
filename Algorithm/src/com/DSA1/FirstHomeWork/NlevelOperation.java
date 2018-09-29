@@ -6,7 +6,7 @@ public class NlevelOperation {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("請輸入數字得出此階層:");
+		System.out.println("enter a number:");
 		Scanner sc1 = new Scanner(System.in);
 		int num = sc1.nextInt();
 		int j = 1;
