@@ -12,7 +12,7 @@ public class SelectionSort {
 	}
 
 	public void sort() {
-		int i, j, k, tmp;
+		int i, j, tmp;
 		for (i = 0; i < data.length - 1; i++) {				//n個數執行n-1次
 			for (j = i + 1; j < data.length; j++) {			//從第i+1個數開始比較，有則換，無則跳過
 				if(data[i]>data[j]) {

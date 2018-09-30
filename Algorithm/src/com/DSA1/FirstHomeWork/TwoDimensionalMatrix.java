@@ -11,7 +11,7 @@ public class TwoDimensionalMatrix {
 
 	void start() {
 		// System.out.println(a[0].length);
-		System.out.println("°}¦Ca");
+		System.out.println("é™£åˆ—a");
 		for (i = 0; i < a.length; i++) {
 			for (j = 0; j < a[0].length; j++) {
 				System.out.print(a[i][j] + "\t");
@@ -20,7 +20,7 @@ public class TwoDimensionalMatrix {
 
 		}
 		System.out.println(" ");
-		System.out.println("°}¦Cb");
+		System.out.println("é™£åˆ—b");
 		
 		for (i = 0; i < b.length; i++) {
 			for (j = 0; j < a[0].length; j++) {
@@ -30,15 +30,26 @@ public class TwoDimensionalMatrix {
 
 		}
 		System.out.println(" ");
-		System.out.println("¬Û­¼");
+		System.out.println("");
 
-		for (i = 0; i < a.length; i++) {					//a row(a°}¦C²Ä¤@¦æ)
-			for (j = 0; j < b[0].length; j++) {				//b column(b°}¦C²Ä¤@¦C)
+		
+		
+		/*
+		
+		 1	2		5	6		A	B
+		 3	4	*	7	8 ==    C	D
+		 5	6					E	F
+		
+		 */
+		//1*5+2*7 = 19
+		
+		for (i = 0; i < a.length; i++) {					//a row(aé™£åˆ—ç¬¬ä¸€è¡Œ)
+			for (j = 0; j < b[0].length; j++) {				//b column(bé™£åˆ—ç¬¬ä¸€åˆ—)
 				int tmp = 0;
-				for (k = 0; k < a.length; k++) {			//a row(¥Ha°}¦Cªº¦æ¬°¥D)
-					tmp = tmp + a[i][k] * b[k][j];			//­pºâc[0][0]¤§µ²ªG¨Ã¼È¦s
+				for (k = 0; k < b.length; k++) {			//b row(ä»¥bé™£åˆ—ç‚ºä¸»)
+					tmp = tmp + a[i][k] * b[k][j];			//è¨ˆç®—c[0][0]ä¹‹çµæžœä¸¦æš«å­˜
 				}
-				c[i][j] = tmp;								//Àx¦s¶i°}¦Cc
+				c[i][j] = tmp;								//æš«å­˜å€¼å„²å­˜è‡³é™£åˆ—c
 
 			}
 

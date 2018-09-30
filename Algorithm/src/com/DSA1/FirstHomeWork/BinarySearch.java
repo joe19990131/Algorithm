@@ -29,13 +29,15 @@ public class BinarySearch {
 		Scanner sc1 = new Scanner(System.in);
 		int key = sc1.nextInt();
 		int mid = (start + end) / 2;
-
+		//System.out.println(mid);	
+		//1, 2, 3, 4, 5, 6, 7, 8, 9 ,10
+		
 		while (true) {
 			mid = (start + end) / 2;
 			if (key == data[mid]) {
 				System.out.println("found  in place  " + mid);
 				break;
-			} else if (key > data[mid]) {
+			} else if (key < data[mid]) {
 				end = mid - 1;
 			} else {
 				start = mid + 1;
