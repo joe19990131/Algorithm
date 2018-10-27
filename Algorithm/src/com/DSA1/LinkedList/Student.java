@@ -1,6 +1,6 @@
 package com.DSA1.LinkedList;
 
-public class T {
+public class Student {
 int no;
 String name;
 int score;
@@ -22,13 +22,13 @@ public int getScore() {
 public void setScore(int score) {
 	this.score = score;
 }
-public T(int no, String name, int score) {
+public Student(int no, String name, int score) {
 	super();
 	this.no = no;
 	this.name = name;
 	this.score = score;
 }
-public T() {
+public Student() {
 	super();
 }
 }
