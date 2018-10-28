@@ -1,14 +1,14 @@
 package com.DSA1.LinkedList;
 
-public class SingltLinkedList2 extends LinkedList2<Student> {
+public class SingltLinkedList2<T> extends LinkedList2<T>{
 
 	@Override
-	public void addFirst(Student value) {
+	public void addFirst(T value) {
 		// TODO Auto-generated method stub
-		Node<Student> node = new Node<Student>(value);
-		if (count == 0) {
+		Node<T> node = new Node<T>(value);
+		if(count == 0) {
 			last = node;
-		} else {
+		}else {
 			node.setNext(first);
 			first = node;
 			++count;
@@ -16,12 +16,12 @@ public class SingltLinkedList2 extends LinkedList2<Student> {
 	}
 
 	@Override
-	public void addLast(Student value) {
+	public void addLast(T value) {
 		// TODO Auto-generated method stub
-		Node<Student> node = new Node<Student>(value);
-		if (count == 0) {
+		Node<T> node = new Node<T>(value);
+		if(count == 0) {
 			first = node;
-		} else {
+		}else {
 			last.setNext(node);
 			last = node;
 			++count;
@@ -29,84 +29,81 @@ public class SingltLinkedList2 extends LinkedList2<Student> {
 	}
 
 	@Override
-	// add before node
-	public void addBefore(Node<Student> node, Student value) {
+	public void addBefore(Node<T> node, T value) {
 		// TODO Auto-generated method stub
-		Node<Student> newNode = new Node<Student>(value);
-		if (node == first) {
-			first = newNode;
-		} else {
-			Node<Student> preNode = findPreviousNode(node);
+		Node<T> newNode = new Node<T>(value);
+		if(node == first) {
+			addFirst(value);
+		}else {
+			Node<T> preNode = findPreviousNode(node);
 			preNode.setNext(newNode);
 		}
 		newNode.setNext(node);
 		++count;
-
 	}
 
 	@Override
-	public void addAfter(Node<Student> node, Student value) {
+	public void addAfter(Node<T> node, T value) {
 		// TODO Auto-generated method stub
-		Node<Student> newNode = new Node<Student>(value);
-		newNode.setNext(node.next);
+		Node<T> newNode = new Node<T>(value);
+		newNode.setNext(node.getNext());
 		node.setNext(newNode);
-		if (node == last) {
-			last = newNode;
-		}
-		++count;
+		if(node == last) {
+			addLast(value);
+		}++count;
+		
 	}
 
 	@Override
 	public void removeFirst() {
 		// TODO Auto-generated method stub
-		if (count == 0) {
+		if(count == 0)
 			throw new ArrayIndexOutOfBoundsException();
-		} else if (count == 1) {
+		else if(count == 1) {
 			first = null;
 			last = null;
-		} else {
-			Node<Student> node = first.getNext();
+		}else {
+			Node<T> node = first.getNext();
 			first.setNext(null);
 			first = node;
-		}
-		--count;
+		}--count;
 	}
 
 	@Override
 	public void removeLast() {
 		// TODO Auto-generated method stub
-		if (count == 0) {
+		if(count == 0)
 			throw new ArrayIndexOutOfBoundsException();
-		} else if (count == 1) {
+		else if(count == 1) {
 			first = null;
 			last = null;
-		} else {
-			Node<Student> node = findPreviousNode(last);
+		}else {
+			Node<T> node = findPreviousNode(last);
 			node.setNext(null);
 			last = node;
-		}
+		}--count;
 	}
 
 	@Override
-	public void remove(Node<Student> node) {
+	public void remove(Node<T> node) {
 		// TODO Auto-generated method stub
-		if (node == first) {
+		if(node == first){
 			removeFirst();
-		} else if (node == last) {
+		}else if(node == last) {
 			removeLast();
-		} else {
-			Node<Student> preNode = findPreviousNode(node);
-			if (preNode == null) {
-				throw new ArrayIndexOutOfBoundsException();
+		}else {
+			Node<T> preNode = findPreviousNode(node);
+			if(preNode == null)
+					throw new ArrayIndexOutOfBoundsException();
+			else {
+				preNode.setNext(node.getNext());
+				node.setNext(null);
+				--count;
 			}
-			preNode.setNext(node.next);
-			node.setNext(null);
-			--count;
 		}
 	}
-
-	private Node<Student> findPreviousNode(Node<Student> node) {
-		Node<Student> preNode = first;
+	private Node<T> findPreviousNode(Node<T> node) {
+		Node<T> preNode = first;
 		while (preNode != null) {
 			if (node == preNode.getNext())
 				break;
@@ -115,3 +112,5 @@ public class SingltLinkedList2 extends LinkedList2<Student> {
 		return preNode;
 	}
 }
+
+	
