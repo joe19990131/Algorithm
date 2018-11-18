@@ -15,7 +15,7 @@ public class Ackermann {
 		// TODO Auto-generated method stub
 		Ackermann ackermann = new Ackermann();
 
-		System.out.println(ackermann.ackermann(4, 2));
+		System.out.println(ackermann.ackermann(3, 2));
 	}
 
 }
