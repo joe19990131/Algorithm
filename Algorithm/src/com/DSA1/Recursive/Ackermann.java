@@ -1,13 +1,19 @@
 package com.DSA1.Recursive;
 
 public class Ackermann {
-	public int ackermann(int m, int n) {
+	//public long nonRecursiveAckermann(long m,long n) {
+		//if(m == 0)
+			//return n+1;
+		//else if()
+	//}
+	
+	public long recursiveAckermann(long m, long n) {
 		if (m == 0)
 			return n + 1;
 		else if (n == 0 && m > 0)
-			return ackermann(m - 1, 1);
+			return recursiveAckermann(m - 1, 1);
 		else
-			return ackermann(m - 1, ackermann(m, n - 1));
+			return recursiveAckermann(m - 1, recursiveAckermann(m, n - 1));
 		
 	}
 
@@ -15,7 +21,7 @@ public class Ackermann {
 		// TODO Auto-generated method stub
 		Ackermann ackermann = new Ackermann();
 
-		System.out.println(ackermann.ackermann(3, 2));
+		System.out.println(ackermann.recursiveAckermann(3, 2));
 	}
 
 }
