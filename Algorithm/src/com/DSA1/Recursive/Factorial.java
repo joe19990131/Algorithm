@@ -4,7 +4,7 @@ public class Factorial {
 
 	public int recursiveFactorial(int n) {
 		int ans;
-		if (n == 1) {
+		if (n <= 1) {
 			ans = 1;
 		} else {
 			ans = n * recursiveFactorial(n - 1);

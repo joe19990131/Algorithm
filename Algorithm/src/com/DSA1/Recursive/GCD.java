@@ -10,7 +10,7 @@ public class GCD {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		GCD gcd = new GCD();
-		System.out.println(gcd.gcd(5, 16));
+		System.out.println(gcd.gcd(5, 15));
 	}
 
 }
