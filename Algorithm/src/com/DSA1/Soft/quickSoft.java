@@ -18,7 +18,7 @@ public class quickSoft extends SortBase {
         int pivot = list[low];
         //上面定低位住標所在的值
         while (low < high) {
-            while (low < high && list[high] >= pivot) {    //當低位座標未超過高位且低位值小於高位值時-----由高向低
+            while (low < high && list[high] >= pivot) {    //當低位座標還沒超過高位且低位值小於高位值時-----由高向低
                 high--;
             }
             list[low] = list[high]; // 將小於 pivot 的值放在低位，這裡會形成交叉
